@@ -207,3 +207,6 @@ console.table(onlineAndSorted);
 
 // Оптимизация нужно думать исходя из задачи
 
+/*
+* Chaining в методах обьекта как jguery
+*/
