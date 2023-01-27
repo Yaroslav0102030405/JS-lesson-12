@@ -113,3 +113,38 @@ console.table(byName)
 // в 99% случаев вам нужно будет сортировать по числам. У вас будет какой-то массив обьектов
 // и в этих обьектах вам необходимо будет по какому-то свойству сортировать вниз или верх
 
+/*
+* Новый метод Array.prototype.flat(depth)
+* - Разглаживает массив до указанной глубины 
+* - По умолчанию глубина 1
+*/
+
+const array = [1, 2, [4, [5]], [6, [7, 7, [9]]]]
+console.log(array.flat(3))
+// (в скобочках пишем глубину вложености (1) (2) или (3))
+// Метод flat() -  недеструктивный он не изменяет оригинал он возвращает новый массив уже разглаженный
+
+/*
+* Array.prototype.flatMap()
+* - Комбинация map + flat 
+*/
+
+/*
+ * Собираем все теги из твитов
+ */
+
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+// const allTags = tweets.reduce((acc, tweet) => [...acc, ...tweet.tags], []);
+// console.log(allTags);
+
+const tags = tweets.flatMap(t => t.tags)
+console.log(tags)
+// тут мы reduce заменили на метод flatMap()
+
